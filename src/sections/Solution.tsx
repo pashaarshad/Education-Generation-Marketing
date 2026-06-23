@@ -36,7 +36,7 @@ export default function Solution() {
   ];
 
   return (
-    <section id="solutions" className="py-24 relative overflow-hidden bg-brand-dark/10">
+    <section id="solutions" className="py-24 relative overflow-hidden bg-slate-50/50">
       
       {/* Background glow */}
       <div className="gradient-blob w-[500px] h-[500px] bg-brand-purple/5 top-[30%] left-[-10%] animate-pulse-slow" />
@@ -46,15 +46,15 @@ export default function Solution() {
         
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-20 flex flex-col items-center gap-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-purple/10 border border-brand-purple/20 text-xs font-semibold text-brand-violet">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-purple/10 border border-brand-purple/20 text-xs font-semibold text-brand-purple">
             <ShieldCheck className="w-3.5 h-3.5" />
             The Proven Growth Blueprint
           </div>
-          <h2 className="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl text-white tracking-tight leading-tight mt-2">
+          <h2 className="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl text-slate-900 tracking-tight leading-tight mt-2">
             The College Admission <br />
             Growth System™
           </h2>
-          <p className="text-slate-400 text-sm md:text-base leading-relaxed max-w-xl">
+          <p className="text-slate-600 text-sm md:text-base leading-relaxed max-w-xl">
             A continuous, 4-step digital framework designed to attract qualified student profiles, maximize funnel conversion, and fill vacant seats.
           </p>
         </div>
@@ -62,7 +62,7 @@ export default function Solution() {
         {/* Timeline Layout */}
         <div className="relative max-w-4xl mx-auto">
           {/* Vertical Connecting Line (Desktop only) */}
-          <div className="hidden md:block absolute left-1/2 top-4 bottom-4 w-[2px] bg-gradient-to-b from-purple-500/20 via-brand-purple/30 to-purple-600/10 -translate-x-1/2" />
+          <div className="hidden md:block absolute left-1/2 top-4 bottom-4 w-[2px] bg-gradient-to-b from-purple-200 via-brand-purple/20 to-purple-300/10 -translate-x-1/2" />
 
           {/* Steps */}
           <div className="flex flex-col gap-12 md:gap-16">
@@ -84,28 +84,28 @@ export default function Solution() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.5, delay: 0.1 }}
-                    className="w-full md:w-[45%] glass-panel rounded-2xl p-6 md:p-8 border border-white/5 bg-[#0e0d15]/80 hover:border-brand-purple/35 transition-all duration-300 group"
+                    className="w-full md:w-[45%] rounded-2xl p-6 md:p-8 border border-slate-100 bg-white hover:border-brand-purple/40 hover:shadow-[0_15px_30px_rgba(124,58,237,0.06)] transition-all duration-300 group shadow-[0_2px_10px_rgba(0,0,0,0.01)]"
                   >
                     <div className="flex justify-between items-start mb-4">
                       <div className={`w-10 h-10 rounded-xl bg-gradient-to-r ${step.color} flex items-center justify-center text-white font-semibold shadow-lg`}>
                         <Icon className="w-5 h-5" />
                       </div>
-                      <span className="font-display font-extrabold text-2xl text-white/10 group-hover:text-brand-purple/20 transition-colors">
+                      <span className="font-display font-extrabold text-2xl text-slate-100 group-hover:text-brand-purple/10 transition-colors">
                         {step.num}
                       </span>
                     </div>
                     
-                    <h3 className="font-display font-bold text-xl text-white group-hover:text-brand-violet transition-colors">
+                    <h3 className="font-display font-bold text-xl text-slate-900 group-hover:text-brand-purple transition-colors">
                       {step.title}
                     </h3>
-                    <p className="text-slate-400 text-sm mt-3 leading-relaxed">
+                    <p className="text-slate-600 text-sm mt-3 leading-relaxed">
                       {step.desc}
                     </p>
                   </motion.div>
 
                   {/* Bullet Center Indicator */}
-                  <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-[#050508] border-2 border-brand-purple/40 items-center justify-center z-20">
-                    <div className={`w-3.5 h-3.5 rounded-full bg-gradient-to-r ${step.color} animate-pulse`} />
+                  <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-white border-2 border-brand-purple/20 items-center justify-center z-20 shadow-[0_2px_10px_rgba(0,0,0,0.05)]">
+                    <div className={`w-3.5 h-3.5 rounded-full bg-gradient-to-r ${step.color}`} />
                   </div>
 
                   {/* Empty Spacer Column (to balance grid) */}

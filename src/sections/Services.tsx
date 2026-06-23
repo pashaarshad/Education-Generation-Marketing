@@ -44,7 +44,7 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="py-24 relative overflow-hidden">
+    <section id="services" className="py-24 relative overflow-hidden bg-white">
       
       {/* Background glow */}
       <div className="gradient-blob w-[500px] h-[500px] bg-brand-purple/5 top-[10%] right-[-10%] animate-pulse-slow" />
@@ -53,15 +53,15 @@ export default function Services() {
         
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-20 flex flex-col items-center gap-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-purple/10 border border-brand-purple/20 text-xs font-semibold text-brand-violet">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-purple/10 border border-brand-purple/20 text-xs font-semibold text-brand-purple">
             <Sparkles className="w-3.5 h-3.5" />
             Outcome-First Services
           </div>
-          <h2 className="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl text-white tracking-tight leading-tight mt-2">
+          <h2 className="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl text-slate-900 tracking-tight leading-tight mt-2">
             We Don't Just Offer Services. <br />
             <span className="text-gradient-purple">We Deliver Enrollment Growth.</span>
           </h2>
-          <p className="text-slate-400 text-sm md:text-base leading-relaxed max-w-xl">
+          <p className="text-slate-600 text-sm md:text-base leading-relaxed max-w-xl">
             We align all digital assets toward a single metric: filling your departments with high-quality students.
           </p>
         </div>
@@ -77,30 +77,30 @@ export default function Services() {
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.4, delay: idx * 0.07 }}
                 key={idx}
-                className="glass-panel glass-panel-hover rounded-2xl p-6 md:p-8 flex flex-col justify-between"
+                className="rounded-2xl p-6 md:p-8 flex flex-col justify-between bg-slate-50 border border-slate-100 hover:border-brand-purple/40 hover:bg-white hover:shadow-[0_15px_30px_rgba(124,58,237,0.06)] transition-all duration-300 group shadow-[0_2px_10px_rgba(0,0,0,0.01)]"
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">
-                    <div className="w-10 h-10 rounded-xl bg-brand-purple/10 border border-brand-purple/20 flex items-center justify-center text-brand-violet">
+                    <div className="w-10 h-10 rounded-xl bg-brand-purple/10 border border-brand-purple/20 flex items-center justify-center text-brand-purple">
                       <Icon className="w-5 h-5" />
                     </div>
-                    <span className="text-3xs font-bold text-emerald-400 uppercase bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
+                    <span className="text-3xs font-bold text-emerald-600 uppercase bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
                       Outcome Led
                     </span>
                   </div>
                   
-                  <span className="text-3xs font-semibold text-slate-500 uppercase tracking-widest">{service.title}</span>
-                  <h3 className="font-display font-bold text-lg text-white mt-1.5 leading-snug">
+                  <span className="text-3xs font-semibold text-slate-400 uppercase tracking-widest">{service.title}</span>
+                  <h3 className="font-display font-bold text-lg text-slate-900 mt-1.5 leading-snug">
                     {service.outcome}
                   </h3>
-                  <p className="text-slate-400 text-xs md:text-sm mt-3 leading-relaxed">
+                  <p className="text-slate-600 text-xs md:text-sm mt-3 leading-relaxed">
                     {service.desc}
                   </p>
                 </div>
 
-                <div className="mt-8 pt-4 border-t border-white/5 flex items-center justify-between text-2xs text-slate-400 group-hover:text-white">
+                <div className="mt-8 pt-4 border-t border-slate-100 flex items-center justify-between text-2xs text-slate-500 group-hover:text-slate-800 transition-colors">
                   <span>Learn more about implementation</span>
-                  <svg className="w-3.5 h-3.5 text-brand-violet group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                  <svg className="w-3.5 h-3.5 text-brand-purple group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                   </svg>
                 </div>

@@ -58,7 +58,7 @@ export default function Booking() {
   };
 
   return (
-    <section id="booking" className="py-24 relative overflow-hidden bg-brand-dark/20 border-t border-white/5">
+    <section id="booking" className="py-24 relative overflow-hidden bg-[#050508] border-t border-white/10">
       
       {/* Background glow */}
       <div className="gradient-blob w-[500px] h-[500px] bg-brand-purple/10 bottom-[-10%] right-[-10%] animate-pulse-slow" />
@@ -70,7 +70,7 @@ export default function Booking() {
           
           {/* Left Column: Copy & Value Proposition */}
           <div className="lg:col-span-6 flex flex-col gap-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-purple/10 border border-brand-purple/20 text-xs font-semibold text-brand-violet w-fit">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-purple/20 border border-brand-purple/40 text-xs font-semibold text-purple-300 w-fit">
               <PhoneCall className="w-3.5 h-3.5" />
               Claim Your Strategy Call
             </div>
@@ -78,17 +78,17 @@ export default function Booking() {
               Free College Admission <br />
               <span className="text-gradient-purple">Growth Audit</span>
             </h2>
-            <p className="text-slate-400 text-sm md:text-base leading-relaxed">
+            <p className="text-slate-300 text-sm md:text-base leading-relaxed">
               Book a private, 30-minute diagnostic session with our enrollment growth specialists. We will dissect your current setup and hand you a clear, actionable game plan.
             </p>
 
-            <div className="h-[1px] bg-white/5 w-full my-2" />
+            <div className="h-[1px] bg-white/10 w-full my-2" />
 
             <div className="flex flex-col gap-4">
               <h4 className="text-sm font-bold text-white uppercase tracking-wider">What we cover in this session:</h4>
               {benefits.map((benefit, idx) => (
                 <div key={idx} className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-brand-purple/10 border border-brand-purple/20 flex items-center justify-center shrink-0 text-brand-violet mt-0.5">
+                  <div className="w-5 h-5 rounded-full bg-brand-purple/20 border border-brand-purple/40 flex items-center justify-center shrink-0 text-brand-violet mt-0.5">
                     <Check className="w-3 h-3 text-brand-violet" strokeWidth={3} />
                   </div>
                   <span className="text-xs md:text-sm text-slate-300">{benefit}</span>
@@ -96,7 +96,7 @@ export default function Booking() {
               ))}
             </div>
 
-            <div className="p-4 rounded-xl bg-brand-purple/5 border border-brand-purple/15 text-2xs text-slate-400">
+            <div className="p-4 rounded-xl bg-brand-purple/10 border border-brand-purple/20 text-2xs text-slate-400">
               ⚡ <strong>Note:</strong> Zero sales pressure. If you like the plan, we can discuss partnering. If not, the recommendations are yours to keep.
             </div>
           </div>
@@ -118,23 +118,25 @@ export default function Booking() {
                     <div className="flex flex-col gap-1.5">
                       <label className="text-2xs font-semibold uppercase text-slate-400">College / University Name</label>
                       <input
+                        suppressHydrationWarning
                         required
                         type="text"
                         placeholder="e.g. Imperial Institute"
                         value={formData.collegeName}
                         onChange={(e) => setFormData({ ...formData, collegeName: e.target.value })}
-                        className="p-3 rounded-lg bg-brand-dark border border-white/10 focus:border-brand-purple focus:ring-1 focus:ring-brand-purple text-xs text-white outline-none transition-all"
+                        className="p-3 rounded-lg bg-black border border-white/10 focus:border-brand-purple focus:ring-1 focus:ring-brand-purple text-xs text-white outline-none transition-all"
                       />
                     </div>
                     <div className="flex flex-col gap-1.5">
                       <label className="text-2xs font-semibold uppercase text-slate-400">Contact Person Name</label>
                       <input
+                        suppressHydrationWarning
                         required
                         type="text"
                         placeholder="e.g. Dr. Amit Sharma"
                         value={formData.contactName}
                         onChange={(e) => setFormData({ ...formData, contactName: e.target.value })}
-                        className="p-3 rounded-lg bg-brand-dark border border-white/10 focus:border-brand-purple focus:ring-1 focus:ring-brand-purple text-xs text-white outline-none transition-all"
+                        className="p-3 rounded-lg bg-black border border-white/10 focus:border-brand-purple focus:ring-1 focus:ring-brand-purple text-xs text-white outline-none transition-all"
                       />
                     </div>
                   </div>
@@ -144,23 +146,25 @@ export default function Booking() {
                     <div className="flex flex-col gap-1.5">
                       <label className="text-2xs font-semibold uppercase text-slate-400">Official Email ID</label>
                       <input
+                        suppressHydrationWarning
                         required
                         type="email"
                         placeholder="e.g. admissions@college.edu"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="p-3 rounded-lg bg-brand-dark border border-white/10 focus:border-brand-purple focus:ring-1 focus:ring-brand-purple text-xs text-white outline-none transition-all"
+                        className="p-3 rounded-lg bg-black border border-white/10 focus:border-brand-purple focus:ring-1 focus:ring-brand-purple text-xs text-white outline-none transition-all"
                       />
                     </div>
                     <div className="flex flex-col gap-1.5">
                       <label className="text-2xs font-semibold uppercase text-slate-400">WhatsApp / Phone Number</label>
                       <input
+                        suppressHydrationWarning
                         required
                         type="tel"
                         placeholder="e.g. +91 98765 43210"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="p-3 rounded-lg bg-brand-dark border border-white/10 focus:border-brand-purple focus:ring-1 focus:ring-brand-purple text-xs text-white outline-none transition-all"
+                        className="p-3 rounded-lg bg-black border border-white/10 focus:border-brand-purple focus:ring-1 focus:ring-brand-purple text-xs text-white outline-none transition-all"
                       />
                     </div>
                   </div>
@@ -169,9 +173,10 @@ export default function Booking() {
                   <div className="flex flex-col gap-1.5">
                     <label className="text-2xs font-semibold uppercase text-slate-400">Average Annual Intake Target</label>
                     <select
+                      suppressHydrationWarning
                       value={formData.intakeSize}
                       onChange={(e) => setFormData({ ...formData, intakeSize: e.target.value })}
-                      className="p-3 rounded-lg bg-brand-dark border border-white/10 focus:border-brand-purple focus:ring-1 focus:ring-brand-purple text-xs text-white outline-none transition-all"
+                      className="p-3 rounded-lg bg-black border border-white/10 focus:border-brand-purple focus:ring-1 focus:ring-brand-purple text-xs text-white outline-none transition-all"
                     >
                       <option value="Under 100">Under 100 Students</option>
                       <option value="100-500">100 to 500 Students</option>
@@ -193,7 +198,7 @@ export default function Booking() {
                             className={`p-2.5 rounded-lg border text-2xs cursor-pointer select-none transition-all flex items-center justify-between ${
                               isChecked
                                 ? "bg-brand-purple/10 border-brand-purple text-white font-semibold"
-                                : "bg-brand-dark border-white/5 text-slate-400 hover:border-white/10"
+                                : "bg-black border-white/5 text-slate-400 hover:border-white/10"
                             }`}
                           >
                             <span>{challenge}</span>
@@ -210,6 +215,7 @@ export default function Booking() {
 
                   {/* Submit Button */}
                   <button
+                    suppressHydrationWarning
                     type="submit"
                     className="w-full py-4 mt-2 rounded-xl font-semibold bg-brand-purple hover:bg-brand-violet text-white transition-all duration-300 shadow-[0_0_20px_rgba(124,58,237,0.3)] hover:shadow-[0_0_25px_rgba(124,58,237,0.5)] cursor-pointer text-center text-xs"
                   >
@@ -226,10 +232,11 @@ export default function Booking() {
                     <CheckCircle className="w-8 h-8" />
                   </div>
                   <h3 className="font-display font-bold text-2xl text-white">Audit Request Received!</h3>
-                  <p className="text-slate-400 text-sm mt-3 max-w-sm">
+                  <p className="text-slate-300 text-sm mt-3 max-w-sm">
                     Thank you, <strong>{formData.contactName}</strong>. Our team will review <strong>{formData.collegeName}</strong>'s digital assets and reach out on <strong>{formData.email}</strong> within 24 hours to schedule your session.
                   </p>
                   <button
+                    suppressHydrationWarning
                     onClick={() => setSubmitted(false)}
                     className="mt-8 text-xs font-semibold text-brand-violet hover:underline cursor-pointer"
                   >

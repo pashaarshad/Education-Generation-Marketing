@@ -30,10 +30,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${spaceGrotesk.variable} ${inter.variable} h-full antialiased dark`}
+      className={`${spaceGrotesk.variable} ${inter.variable} h-full antialiased`}
       style={{ scrollBehavior: "smooth" }}
     >
-      <body className="min-h-full bg-[#050508] text-white font-sans flex flex-col overflow-x-hidden">
+      <body className="min-h-full bg-white text-slate-900 font-sans flex flex-col overflow-x-hidden">
         {children}
       </body>
     </html>

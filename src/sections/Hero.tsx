@@ -21,55 +21,42 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-28 pb-16 overflow-hidden">
+    <section 
+      className="relative min-h-screen flex items-center justify-center pt-28 pb-16 overflow-hidden bg-black"
+      style={{
+        backgroundImage: "url('/hero_bg.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat"
+      }}
+    >
       
-      {/* Background glow effects */}
-      <div className="gradient-blob w-[500px] h-[500px] bg-brand-purple/10 top-[-10%] left-[-10%] animate-pulse-slow" />
-      <div className="gradient-blob w-[600px] h-[600px] bg-brand-indigo/10 bottom-[-10%] right-[-10%] animate-pulse-slow" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_20%,#050508_100%)]" />
+      {/* Background overlay to ensure text contrast */}
+      <div className="absolute inset-0 bg-black/40 z-0" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/80 z-0" />
 
       {/* Grid lines background */}
-      <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)] bg-[size:24px_24px]" />
+      <div className="absolute inset-0 opacity-[0.05] bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)] bg-[size:24px_24px] z-0" />
 
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10 w-full">
         
         {/* Left Column: Headline and Copy */}
         <div className="lg:col-span-6 flex flex-col gap-6 text-left">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-purple/10 border border-brand-purple/20 text-xs font-semibold text-brand-violet w-fit"
-          >
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-purple/20 border border-brand-purple/40 text-xs font-semibold text-purple-300 w-fit">
             <Sparkles className="w-3.5 h-3.5" />
             Proven Digital Admission Growth System
-          </motion.div>
+          </div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-white leading-[1.1]"
-          >
+          <h1 className="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-white leading-[1.1]">
             Fill More College Seats. <br />
             <span className="text-gradient-purple">Generate More Admissions.</span>
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-slate-400 text-base sm:text-lg leading-relaxed max-w-xl"
-          >
+          <p className="text-slate-300 text-base sm:text-lg leading-relaxed max-w-xl">
             We help colleges increase student inquiries, applications, and enrollments through a predictable digital growth system. Reduce agent dependency and build digital ownership.
-          </motion.p>
+          </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="flex flex-col sm:flex-row gap-4 mt-2"
-          >
+          <div className="flex flex-col sm:flex-row gap-4 mt-2">
             <button
               onClick={() => scrollTo("booking")}
               className="px-8 py-4 rounded-full font-semibold bg-brand-purple hover:bg-brand-violet text-white transition-all duration-300 shadow-[0_0_30px_rgba(124,58,237,0.4)] hover:shadow-[0_0_35px_rgba(124,58,237,0.6)] cursor-pointer flex items-center justify-center gap-2 group"
@@ -80,48 +67,38 @@ export default function Hero() {
             
             <button
               onClick={() => scrollTo("solutions")}
-              className="px-8 py-4 rounded-full font-semibold bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-white/20 transition-all duration-300 cursor-pointer flex items-center justify-center gap-2"
+              className="px-8 py-4 rounded-full font-semibold bg-white/10 hover:bg-white/20 text-white border border-white/20 hover:border-white/30 transition-all duration-300 cursor-pointer flex items-center justify-center gap-2"
             >
               <Play className="w-3.5 h-3.5 fill-white" />
               See How It Works
             </button>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="grid grid-cols-2 gap-4 mt-6 border-t border-white/5 pt-6 max-w-lg"
-          >
+          <div className="grid grid-cols-2 gap-4 mt-6 border-t border-white/10 pt-6 max-w-lg">
             <div className="flex items-center gap-2.5">
               <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-              <span className="text-xs font-medium text-slate-300">Data-driven student profiling</span>
+              <span className="text-xs font-medium text-slate-200">Data-driven student profiling</span>
             </div>
             <div className="flex items-center gap-2.5">
               <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-              <span className="text-xs font-medium text-slate-300">Predictable inquiry pipelines</span>
+              <span className="text-xs font-medium text-slate-200">Predictable inquiry pipelines</span>
             </div>
             <div className="flex items-center gap-2.5">
               <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-              <span className="text-xs font-medium text-slate-300">CRM & WhatsApp automation</span>
+              <span className="text-xs font-medium text-slate-200">CRM & WhatsApp automation</span>
             </div>
             <div className="flex items-center gap-2.5">
               <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-              <span className="text-xs font-medium text-slate-300">Zero broker agent commission</span>
+              <span className="text-xs font-medium text-slate-200">Zero broker agent commission</span>
             </div>
-          </motion.div>
+          </div>
         </div>
 
-        {/* Right Column: Premium Dashboard Graphic */}
+        {/* Right Column: Static Premium Dashboard Graphic */}
         <div className="lg:col-span-6 flex justify-center items-center relative h-[450px] md:h-[500px]">
           
-          {/* Dashboard Frame */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="w-full max-w-[500px] glass-panel rounded-2xl p-5 border border-white/10 shadow-[0_30px_60px_rgba(0,0,0,0.8)] relative animate-float"
-          >
+          {/* Dashboard Frame (NO animate-float, completely still) */}
+          <div className="w-full max-w-[500px] glass-panel rounded-2xl p-5 border border-white/10 shadow-[0_30px_60px_rgba(0,0,0,0.8)] relative">
             
             {/* Header of Mockup */}
             <div className="flex items-center justify-between border-b border-white/5 pb-4 mb-4">
@@ -132,7 +109,7 @@ export default function Hero() {
                 <span className="text-[10px] text-slate-500 ml-2 font-mono">admission-growth-dashboard v2.4</span>
               </div>
               <span className="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 text-[10px] font-semibold flex items-center gap-1">
-                <span className="w-1 h-1 rounded-full bg-emerald-400 animate-ping" /> Live
+                <span className="w-1 h-1 rounded-full bg-emerald-400" /> Live
               </span>
             </div>
 
@@ -228,7 +205,7 @@ export default function Hero() {
               </div>
             </div>
 
-          </motion.div>
+          </div>
         </div>
 
       </div>

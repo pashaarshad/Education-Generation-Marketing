@@ -45,8 +45,8 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-[#050508]/80 backdrop-blur-md border-b border-brand-purple/10 py-4"
-          : "bg-transparent py-6"
+          ? "bg-[#050508]/95 backdrop-blur-md border-b border-brand-purple/20 py-4 shadow-[0_4px_30px_rgba(0,0,0,0.3)]"
+          : "bg-[#050508]/90 backdrop-blur-sm border-b border-white/5 py-5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
@@ -72,9 +72,10 @@ export default function Navbar() {
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <button
+              suppressHydrationWarning
               key={link.id}
               onClick={() => handleScrollTo(link.id)}
-              className="text-sm font-medium text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer"
+              className="text-sm font-medium text-slate-300 hover:text-white transition-colors duration-200 cursor-pointer"
             >
               {link.label}
             </button>
@@ -84,6 +85,7 @@ export default function Navbar() {
         {/* CTA Button */}
         <div className="hidden md:flex items-center gap-4">
           <button
+            suppressHydrationWarning
             onClick={() => handleScrollTo("booking")}
             className="px-5 py-2.5 rounded-full text-xs font-semibold bg-brand-purple hover:bg-brand-violet text-white transition-all duration-300 shadow-[0_0_20px_rgba(124,58,237,0.3)] hover:shadow-[0_0_25px_rgba(124,58,237,0.5)] cursor-pointer flex items-center gap-2"
           >
@@ -94,6 +96,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
+          suppressHydrationWarning
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           className="md:hidden p-2 text-slate-400 hover:text-white cursor-pointer"
           aria-label="Toggle menu"
@@ -108,6 +111,7 @@ export default function Navbar() {
           <div className="flex flex-col gap-6 mt-8">
             {navLinks.map((link) => (
               <button
+                suppressHydrationWarning
                 key={link.id}
                 onClick={() => handleScrollTo(link.id)}
                 className="text-lg font-medium text-left text-slate-300 hover:text-white transition-colors duration-200 pb-3 border-b border-white/5"
@@ -116,6 +120,7 @@ export default function Navbar() {
               </button>
             ))}
             <button
+              suppressHydrationWarning
               onClick={() => handleScrollTo("booking")}
               className="mt-4 w-full py-4 rounded-full font-semibold bg-brand-purple hover:bg-brand-violet text-white transition-all duration-300 text-center shadow-[0_0_20px_rgba(124,58,237,0.3)]"
             >

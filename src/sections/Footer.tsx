@@ -16,7 +16,7 @@ export default function Footer() {
     setIsSubmitting(true);
 
     try {
-      const web3FormsKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
+      const web3FormsKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "9c4bc675-52b4-4379-ac52-f68277dbf7bc";
       if (web3FormsKey) {
         const response = await fetch("https://api.web3forms.com/submit", {
           method: "POST",

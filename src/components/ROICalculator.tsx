@@ -172,7 +172,7 @@ export default function ROICalculator() {
                 element.scrollIntoView({ behavior: "smooth" });
               }
             }}
-            className="w-full py-4 mt-4 rounded-xl font-semibold bg-white text-slate-955 hover:bg-brand-violet hover:text-white transition-all duration-300 shadow-[0_4px_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_20px_rgba(124,58,237,0.4)] text-center cursor-pointer flex items-center justify-center gap-2"
+            className="w-full py-4 mt-4 rounded-xl font-semibold bg-white text-slate-900 hover:bg-brand-violet hover:text-white transition-all duration-300 shadow-[0_4px_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_20px_rgba(124,58,237,0.4)] text-center cursor-pointer flex items-center justify-center gap-2"
           >
             Claim Your Free Audit Report
             <Sparkles className="w-4 h-4" />

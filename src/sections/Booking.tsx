@@ -57,7 +57,7 @@ export default function Booking() {
     setSubmitError(null);
 
     try {
-      const web3FormsKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
+      const web3FormsKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "9c4bc675-52b4-4379-ac52-f68277dbf7bc";
       
       let response;
       let data;

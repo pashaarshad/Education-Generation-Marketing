@@ -58,6 +58,7 @@ export default function Hero() {
 
           <div className="flex flex-col sm:flex-row gap-4 mt-2">
             <button
+              suppressHydrationWarning
               onClick={() => scrollTo("booking")}
               className="px-8 py-4 rounded-full font-semibold bg-brand-purple hover:bg-brand-violet text-white transition-all duration-300 shadow-[0_0_30px_rgba(124,58,237,0.4)] hover:shadow-[0_0_35px_rgba(124,58,237,0.6)] cursor-pointer flex items-center justify-center gap-2 group"
             >
@@ -66,6 +67,7 @@ export default function Hero() {
             </button>
             
             <button
+              suppressHydrationWarning
               onClick={() => scrollTo("solutions")}
               className="px-8 py-4 rounded-full font-semibold bg-white/10 hover:bg-white/20 text-white border border-white/20 hover:border-white/30 transition-all duration-300 cursor-pointer flex items-center justify-center gap-2"
             >

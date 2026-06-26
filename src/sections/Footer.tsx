@@ -75,16 +75,16 @@ export default function Footer() {
             <div className="flex flex-col gap-4">
               <h4 className="text-2xs font-semibold uppercase text-slate-500 tracking-wider">System Overview</h4>
               <nav className="flex flex-col gap-2.5 text-2xs md:text-xs text-slate-400">
-                <button onClick={() => handleScrollTo("problems")} className="text-left hover:text-white transition-colors cursor-pointer">
+                <button suppressHydrationWarning onClick={() => handleScrollTo("problems")} className="text-left hover:text-white transition-colors cursor-pointer">
                   The Problem
                 </button>
-                <button onClick={() => handleScrollTo("solutions")} className="text-left hover:text-white transition-colors cursor-pointer">
+                <button suppressHydrationWarning onClick={() => handleScrollTo("solutions")} className="text-left hover:text-white transition-colors cursor-pointer">
                   The Solution
                 </button>
-                <button onClick={() => handleScrollTo("services")} className="text-left hover:text-white transition-colors cursor-pointer">
+                <button suppressHydrationWarning onClick={() => handleScrollTo("services")} className="text-left hover:text-white transition-colors cursor-pointer">
                   Growth Services
                 </button>
-                <button onClick={() => handleScrollTo("reports")} className="text-left hover:text-white transition-colors cursor-pointer">
+                <button suppressHydrationWarning onClick={() => handleScrollTo("reports")} className="text-left hover:text-white transition-colors cursor-pointer">
                   ROI Diagnostics
                 </button>
               </nav>
@@ -93,10 +93,10 @@ export default function Footer() {
             <div className="flex flex-col gap-4">
               <h4 className="text-2xs font-semibold uppercase text-slate-500 tracking-wider">Agency</h4>
               <nav className="flex flex-col gap-2.5 text-2xs md:text-xs text-slate-400">
-                <button onClick={() => handleScrollTo("about")} className="text-left hover:text-white transition-colors cursor-pointer">
+                <button suppressHydrationWarning onClick={() => handleScrollTo("about")} className="text-left hover:text-white transition-colors cursor-pointer">
                   About Us
                 </button>
-                <button onClick={() => handleScrollTo("booking")} className="text-left hover:text-white transition-colors cursor-pointer">
+                <button suppressHydrationWarning onClick={() => handleScrollTo("booking")} className="text-left hover:text-white transition-colors cursor-pointer">
                   Book Strategy Audit
                 </button>
                 <span className="text-left text-slate-600 select-none">
@@ -117,11 +117,13 @@ export default function Footer() {
             </p>
             <div className="flex gap-2">
               <input
+                suppressHydrationWarning
                 type="email"
                 placeholder="Dean/Director Email"
                 className="p-2 rounded bg-brand-dark border border-white/5 text-3xs text-white outline-none w-full focus:border-brand-purple"
               />
               <button
+                suppressHydrationWarning
                 onClick={() => alert("Subscribed!")}
                 className="px-3 rounded bg-brand-purple text-white text-3xs font-semibold hover:bg-brand-violet transition-colors cursor-pointer"
               >

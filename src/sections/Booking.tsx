@@ -15,6 +15,8 @@ export default function Booking() {
   });
   
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const benefits = [
     "Review your current digital ads & inquiry strategy",
@@ -49,12 +51,57 @@ export default function Booking() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate API Submission
-    setTimeout(() => {
-      setSubmitted(true);
-    }, 600);
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    try {
+      const web3FormsKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
+      
+      let response;
+      let data;
+
+      if (web3FormsKey) {
+        // Direct Web3Forms submission (perfect for static exports)
+        response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            access_key: web3FormsKey,
+            subject: `🔥 New Lead: Audit Request from ${formData.collegeName}`,
+            from_name: "Generation Marketing Portal",
+            ...formData,
+            challenges: formData.challenges.join(", "), // Web3Forms prefers comma-separated text
+          }),
+        });
+        data = await response.json();
+      } else {
+        // Fallback to custom Next.js API route
+        response = await fetch("/api/send-email", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        });
+        data = await response.json();
+      }
+
+      if (response.ok && (data.success || data.id)) {
+        setSubmitted(true);
+      } else {
+        throw new Error(data.message || "Failed to submit request. Please try again.");
+      }
+    } catch (error: any) {
+      console.error("Form submission error:", error);
+      setSubmitError(error.message || "Something went wrong. Please check your network connection.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -214,12 +261,19 @@ export default function Booking() {
                   </div>
 
                   {/* Submit Button */}
+                  {submitError && (
+                    <div className="p-3 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 text-2xs text-center font-medium">
+                      ⚠️ {submitError}
+                    </div>
+                  )}
+
                   <button
                     suppressHydrationWarning
                     type="submit"
-                    className="w-full py-4 mt-2 rounded-xl font-semibold bg-brand-purple hover:bg-brand-violet text-white transition-all duration-300 shadow-[0_0_20px_rgba(124,58,237,0.3)] hover:shadow-[0_0_25px_rgba(124,58,237,0.5)] cursor-pointer text-center text-xs"
+                    disabled={isSubmitting}
+                    className="w-full py-4 mt-2 rounded-xl font-semibold bg-brand-purple hover:bg-brand-violet text-white transition-all duration-300 shadow-[0_0_20px_rgba(124,58,237,0.3)] hover:shadow-[0_0_25px_rgba(124,58,237,0.5)] cursor-pointer text-center text-xs disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    Schedule My Free Growth Audit Call
+                    {isSubmitting ? "Sending Request..." : "Schedule My Free Growth Audit Call"}
                   </button>
                 </form>
               ) : (

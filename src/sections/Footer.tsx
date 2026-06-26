@@ -1,9 +1,59 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { Mail, Phone, MapPin, Sparkles } from "lucide-react";
 
 export default function Footer() {
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [subscribed, setSubscribed] = useState(false);
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+
+    setIsSubmitting(true);
+
+    try {
+      const web3FormsKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
+      if (web3FormsKey) {
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            access_key: web3FormsKey,
+            subject: `📧 New Newsletter Signup: ${email}`,
+            from_name: "Generation Marketing Portal",
+            email: email,
+            message: `User signed up for the newsletter: ${email}`,
+          }),
+        });
+
+        if (response.ok) {
+          setSubscribed(true);
+          setEmail("");
+        } else {
+          alert("Something went wrong. Please try again.");
+        }
+      } else {
+        // Fallback simulation
+        setTimeout(() => {
+          setSubscribed(true);
+          setEmail("");
+        }, 600);
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Failed to subscribe. Please check your connection.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   const handleScrollTo = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -57,7 +107,7 @@ export default function Footer() {
             <div className="flex flex-col gap-3 text-2xs md:text-xs text-slate-400">
               <div className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-brand-purple shrink-0" />
-                <a href="mailto:growth@generationmarketing.in" className="hover:text-white transition-colors">growth@generationmarketing.in</a>
+                <a href="mailto:managementgenerationmarketing@gmail.com" className="hover:text-white transition-colors">managementgenerationmarketing@gmail.com</a>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-brand-purple shrink-0" />
@@ -115,21 +165,31 @@ export default function Footer() {
             <p className="text-2xs text-slate-400 leading-relaxed">
               Get bi-weekly student acquisition tips and digital enrollment trends sent directly to your inbox.
             </p>
-            <div className="flex gap-2">
-              <input
-                suppressHydrationWarning
-                type="email"
-                placeholder="Dean/Director Email"
-                className="p-2 rounded bg-brand-dark border border-white/5 text-3xs text-white outline-none w-full focus:border-brand-purple"
-              />
-              <button
-                suppressHydrationWarning
-                onClick={() => alert("Subscribed!")}
-                className="px-3 rounded bg-brand-purple text-white text-3xs font-semibold hover:bg-brand-violet transition-colors cursor-pointer"
-              >
-                Join
-              </button>
-            </div>
+            {!subscribed ? (
+              <form onSubmit={handleSubscribe} className="flex gap-2">
+                <input
+                  suppressHydrationWarning
+                  required
+                  type="email"
+                  placeholder="Dean/Director Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="p-2 rounded bg-brand-dark border border-white/5 text-3xs text-white outline-none w-full focus:border-brand-purple"
+                />
+                <button
+                  suppressHydrationWarning
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="px-3 rounded bg-brand-purple text-white text-3xs font-semibold hover:bg-brand-violet transition-colors cursor-pointer disabled:opacity-50"
+                >
+                  {isSubmitting ? "..." : "Join"}
+                </button>
+              </form>
+            ) : (
+              <p className="text-xs text-emerald-400 font-semibold animate-pulse">
+                ✓ Thank you for subscribing!
+              </p>
+            )}
           </div>
 
         </div>

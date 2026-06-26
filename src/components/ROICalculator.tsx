@@ -12,7 +12,7 @@ export default function ROICalculator() {
   const yearlyLoss = emptySeats * annualFees;
   const lifetimeLoss = yearlyLoss * courseDuration;
   
-  // AdmitGrowth Recovery Target (75% recovery rate)
+  // Generation Marketing Recovery Target (75% recovery rate)
   const targetRecoveryRate = 0.75;
   const recoverableAnnual = yearlyLoss * targetRecoveryRate;
   const recoverableLifetime = lifetimeLoss * targetRecoveryRate;
@@ -148,7 +148,7 @@ export default function ROICalculator() {
             <div>
               <div className="flex items-center gap-2 text-xs font-semibold text-emerald-400 mb-1">
                 <TrendingUp className="w-3.5 h-3.5" />
-                Recoverable Opportunity (with AdmitGrowth System™)
+                Recoverable Opportunity (with Generation Marketing System™)
               </div>
               <div className="flex flex-col">
                 <span className="font-display font-extrabold text-3xl md:text-4xl text-emerald-400 tracking-tight">

@@ -4,6 +4,7 @@ import Trust from "@/sections/Trust";
 import Problem from "@/sections/Problem";
 import Solution from "@/sections/Solution";
 import Services from "@/sections/Services";
+import Courses from "@/sections/Courses";
 import About from "@/sections/About";
 import Reports from "@/sections/Reports";
 import Booking from "@/sections/Booking";
@@ -19,6 +20,7 @@ export default function Home() {
         <Problem />
         <Solution />
         <Services />
+        <Courses />
         <About />
         <Reports />
         <Booking />

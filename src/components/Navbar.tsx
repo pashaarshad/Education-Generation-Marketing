@@ -37,6 +37,7 @@ export default function Navbar() {
     { label: "The Problem", id: "problems" },
     { label: "The Solution", id: "solutions" },
     { label: "Services", id: "services" },
+    { label: "Program Campaigns", id: "courses" },
     { label: "Revenue Opportunities", id: "reports" },
     { label: "About", id: "about" },
   ];
@@ -58,13 +59,13 @@ export default function Navbar() {
           <div className="relative w-9 h-9">
             <Image
               src="/logo.svg"
-              alt="AdmitGrowth Logo"
+              alt="Generation Marketing Logo"
               fill
               className="object-contain group-hover:scale-105 transition-transform duration-300"
             />
           </div>
           <span className="font-display font-bold text-xl tracking-tight text-white group-hover:text-brand-violet transition-colors duration-300">
-            AdmitGrowth<span className="text-brand-purple text-xs align-super">™</span>
+            Generation Marketing<span className="text-brand-purple text-xs align-super">™</span>
           </span>
         </div>
 

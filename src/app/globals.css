@@ -4,9 +4,10 @@
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
   
-  --color-brand-purple: #7C3AED;
-  --color-brand-indigo: #6366F1;
-  --color-brand-violet: #8B5CF6;
+  --color-brand-purple: #0170B9;
+  --color-brand-indigo: #0284C7;
+  --color-brand-violet: #0369A1;
+  --color-brand-blue: #0170B9;
   --color-brand-dark: #050508;
   --color-brand-surface: #0e0d15;
   --color-brand-surface-light: #161522;
@@ -27,8 +28,8 @@
 }
 
 @keyframes glow {
-  0%, 100% { filter: drop-shadow(0 0 15px rgba(124, 58, 237, 0.2)); }
-  50% { filter: drop-shadow(0 0 25px rgba(124, 58, 237, 0.4)); }
+  0%, 100% { filter: drop-shadow(0 0 15px rgba(1, 112, 185, 0.2)); }
+  50% { filter: drop-shadow(0 0 25px rgba(1, 112, 185, 0.4)); }
 }
 
 /* Custom scrollbar */
@@ -39,11 +40,11 @@
   background: #050508;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1b1928;
+  background: #111e2e;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #2a273c;
+  background: #1b2e47;
 }
 
 /* Glassmorphism utilities */
@@ -51,12 +52,12 @@
   background: rgba(14, 13, 21, 0.75);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(124, 58, 237, 0.15);
+  border: 1px solid rgba(1, 112, 185, 0.15);
 }
 
 .glass-panel-hover:hover {
-  border-color: rgba(124, 58, 237, 0.35);
-  box-shadow: 0 10px 30px -10px rgba(124, 58, 237, 0.15);
+  border-color: rgba(1, 112, 185, 0.35);
+  box-shadow: 0 10px 30px -10px rgba(1, 112, 185, 0.15);
   background: rgba(18, 17, 27, 0.85);
   transform: translateY(-4px);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -64,13 +65,13 @@
 
 /* Text glow and styling */
 .text-gradient {
-  background: linear-gradient(135deg, #ffffff 30%, #a855f7 100%);
+  background: linear-gradient(135deg, #ffffff 30%, #38bdf8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-gradient-purple {
-  background: linear-gradient(135deg, #c084fc 0%, #7c3aed 100%);
+  background: linear-gradient(135deg, #7dd3fc 0%, #0170B9 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -83,3 +84,4 @@
   z-index: 0;
   pointer-events: none;
 }
+

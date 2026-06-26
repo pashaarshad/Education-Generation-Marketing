@@ -15,7 +15,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "AdmitGrowth | College Admission Growth System",
+  title: "Generation Marketing | Best Education Marketing Company In India",
   description: "We help colleges fill more seats, generate high-quality admissions, and scale enrollments through a predictable digital growth system.",
   icons: {
     icon: "/logo.svg",

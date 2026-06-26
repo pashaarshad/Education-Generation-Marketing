@@ -55,71 +55,90 @@ export default function Problem() {
           </p>
         </div>
 
-        {/* Problems Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {problems.map((prob, idx) => {
-            const Icon = prob.icon;
-            return (
-              <motion.div
-                initial={{ opacity: 0, y: 25 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.4, delay: idx * 0.08 }}
-                key={idx}
-                className="rounded-2xl p-6 border border-slate-100 bg-slate-50 flex flex-col justify-between hover:border-rose-400 hover:bg-white hover:shadow-[0_15px_30px_rgba(244,63,94,0.06)] transition-all duration-300 group"
-              >
-                <div>
-                  <div className="w-9 h-9 rounded-lg bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-600 mb-4 group-hover:scale-105 transition-transform">
-                    <Icon className="w-4 h-4" />
-                  </div>
-                  <h3 className="font-display font-bold text-lg text-slate-900 group-hover:text-rose-600 transition-colors">
-                    {prob.title}
-                  </h3>
-                  <p className="text-slate-600 text-xs md:text-sm mt-2 leading-relaxed">
-                    {prob.desc}
-                  </p>
-                </div>
-                
-                <div className="flex items-center gap-1.5 text-2xs font-semibold text-rose-500/80 mt-6 group-hover:text-rose-600 transition-colors">
-                  Revenue Drain Factor
-                  <ArrowUpRight className="w-3 h-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                </div>
-              </motion.div>
-            );
-          })}
-
-          {/* Special CTA Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.4, delay: 0.4 }}
-            className="rounded-2xl p-6 border border-brand-purple/20 bg-gradient-to-br from-brand-purple/5 to-white flex flex-col justify-between lg:col-span-1 shadow-[0_4px_20px_rgba(124,58,237,0.03)]"
-          >
-            <div>
-              <div className="w-9 h-9 rounded-lg bg-brand-purple/10 border border-brand-purple/20 flex items-center justify-center text-brand-purple mb-4">
-                <span className="text-xs font-bold font-mono">ROI</span>
-              </div>
-              <h3 className="font-display font-bold text-lg text-slate-900">
-                How much is it costing you?
-              </h3>
-              <p className="text-slate-600 text-xs md:text-sm mt-2 leading-relaxed">
-                Use our interactive opportunity assessment below to discover the exact yearly and lifetime revenue lost due to empty seats in your departments.
-              </p>
+        {/* Side-by-Side: Image and Problems Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-16">
+          
+          {/* Left Column: Authentic Empty Classroom Image */}
+          <div className="lg:col-span-5 relative h-[380px] lg:h-[480px] rounded-3xl overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.06)] border border-slate-100">
+            <img
+              src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80&w=800"
+              alt="Empty Lecture Hall Chairs representing vacant college seats"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-transparent to-transparent" />
+            <div className="absolute bottom-6 left-6 right-6">
+              <span className="text-3xs font-bold uppercase tracking-wider text-rose-300">Revenue Drain Factor</span>
+              <h3 className="font-display font-bold text-lg text-white mt-1">Every vacant seat represents ₹1.5L+ in lost tuition fees annually.</h3>
             </div>
-            
-            <button
-              onClick={() => {
-                const element = document.getElementById("reports");
-                if (element) {
-                  element.scrollIntoView({ behavior: "smooth" });
-                }
-              }}
-              className="w-full py-3 mt-6 rounded-xl font-semibold bg-brand-purple hover:bg-brand-violet text-white transition-all duration-300 text-xs text-center cursor-pointer shadow-[0_4px_15px_rgba(124,58,237,0.2)]"
+          </div>
+
+          {/* Right Column: Problems Grid */}
+          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {problems.map((prob, idx) => {
+              const Icon = prob.icon;
+              return (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.4, delay: idx * 0.05 }}
+                  key={idx}
+                  className="rounded-2xl p-5 border border-slate-100 bg-slate-50 flex flex-col justify-between hover:border-rose-400 hover:bg-white hover:shadow-[0_15px_30px_rgba(244,63,94,0.05)] transition-all duration-300 group shadow-[0_2px_10px_rgba(0,0,0,0.01)]"
+                >
+                  <div>
+                    <div className="w-8 h-8 rounded-lg bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-600 mb-3 group-hover:scale-105 transition-transform">
+                      <Icon className="w-4 h-4" />
+                    </div>
+                    <h3 className="font-display font-bold text-base text-slate-900 group-hover:text-rose-600 transition-colors">
+                      {prob.title}
+                    </h3>
+                    <p className="text-slate-600 text-xs md:text-sm mt-1.5 leading-relaxed">
+                      {prob.desc}
+                    </p>
+                  </div>
+                  
+                  <div className="flex items-center gap-1.5 text-3xs font-semibold text-rose-500/80 mt-4 group-hover:text-rose-600 transition-colors">
+                    Revenue Drain Factor
+                    <ArrowUpRight className="w-3 h-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  </div>
+                </motion.div>
+              );
+            })}
+
+            {/* Special CTA Card (Occupies last spot) */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.4, delay: 0.3 }}
+              className="rounded-2xl p-5 border border-brand-purple/20 bg-gradient-to-br from-brand-purple/5 to-white flex flex-col justify-between shadow-[0_4px_20px_rgba(124,58,237,0.02)]"
             >
-              Analyze Your Seat Leakage
-            </button>
-          </motion.div>
+              <div>
+                <div className="w-8 h-8 rounded-lg bg-brand-purple/10 border border-brand-purple/20 flex items-center justify-center text-brand-purple mb-3">
+                  <span className="text-2xs font-bold font-mono">ROI</span>
+                </div>
+                <h3 className="font-display font-bold text-base text-slate-900">
+                  How much is it costing you?
+                </h3>
+                <p className="text-slate-600 text-xs md:text-sm mt-1.5 leading-relaxed">
+                  Use our opportunity assessment to discover the revenue lost from vacant seat caps.
+                </p>
+              </div>
+              
+              <button
+                suppressHydrationWarning
+                onClick={() => {
+                  const element = document.getElementById("reports");
+                  if (element) {
+                    element.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
+                className="w-full py-2.5 mt-4 rounded-xl font-semibold bg-brand-purple hover:bg-brand-violet text-white transition-all duration-300 text-xs text-center cursor-pointer shadow-[0_4px_15px_rgba(124,58,237,0.15)]"
+              >
+                Analyze Your Seat Leakage
+              </button>
+            </motion.div>
+          </div>
         </div>
 
         {/* Warning Callout Box */}
@@ -136,6 +155,7 @@ export default function Problem() {
             </div>
           </div>
           <button
+            suppressHydrationWarning
             onClick={() => {
               const element = document.getElementById("booking");
               if (element) {

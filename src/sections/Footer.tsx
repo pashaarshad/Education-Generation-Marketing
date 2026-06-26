@@ -40,13 +40,13 @@ export default function Footer() {
               <div className="relative w-9 h-9">
                 <Image
                   src="/logo.svg"
-                  alt="AdmitGrowth Logo"
+                  alt="Generation Marketing Logo"
                   fill
                   className="object-contain group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <span className="font-display font-bold text-xl tracking-tight text-white group-hover:text-brand-violet transition-colors">
-                AdmitGrowth<span className="text-brand-purple text-xs align-super">™</span>
+                Generation Marketing<span className="text-brand-purple text-xs align-super">™</span>
               </span>
             </div>
 
@@ -57,7 +57,7 @@ export default function Footer() {
             <div className="flex flex-col gap-3 text-2xs md:text-xs text-slate-400">
               <div className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-brand-purple shrink-0" />
-                <a href="mailto:growth@admitgrowth.com" className="hover:text-white transition-colors">growth@admitgrowth.com</a>
+                <a href="mailto:growth@generationmarketing.in" className="hover:text-white transition-colors">growth@generationmarketing.in</a>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-brand-purple shrink-0" />
@@ -136,7 +136,7 @@ export default function Footer() {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6 pt-10 text-3xs md:text-2xs text-slate-500">
           
           <div className="flex items-center gap-2">
-            <span>© {new Date().getFullYear()} AdmitGrowth. All rights reserved.</span>
+            <span>© {new Date().getFullYear()} Generation Marketing. All rights reserved.</span>
             <span>•</span>
             <span className="flex items-center gap-1 text-slate-400">
               Made for Education Marketing <Sparkles className="w-3 h-3 text-brand-purple" />

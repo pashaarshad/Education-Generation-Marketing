@@ -156,8 +156,8 @@ export default function Hero() {
                   {/* Gradient Area under curve */}
                   <defs>
                     <linearGradient id="chart-grad" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#7C3AED" stopOpacity="0.3" />
-                      <stop offset="100%" stopColor="#7C3AED" stopOpacity="0" />
+                      <stop offset="0%" stopColor="#0170B9" stopOpacity="0.3" />
+                      <stop offset="100%" stopColor="#0170B9" stopOpacity="0" />
                     </linearGradient>
                   </defs>
                   
@@ -170,15 +170,15 @@ export default function Hero() {
                   <path
                     d="M 0 130 C 50 110, 100 80, 150 90 C 200 100, 250 50, 300 40 C 350 30, 400 10, 400 10"
                     fill="none"
-                    stroke="#8B5CF6"
+                    stroke="#0170B9"
                     strokeWidth="3.5"
                     strokeLinecap="round"
                   />
 
                   {/* Highlight dots */}
-                  <circle cx="150" cy="90" r="4.5" fill="#8B5CF6" stroke="#fff" strokeWidth="1.5" />
-                  <circle cx="300" cy="40" r="4.5" fill="#8B5CF6" stroke="#fff" strokeWidth="1.5" />
-                  <circle cx="400" cy="10" r="4.5" fill="#8B5CF6" stroke="#fff" strokeWidth="1.5" />
+                  <circle cx="150" cy="90" r="4.5" fill="#0170B9" stroke="#fff" strokeWidth="1.5" />
+                  <circle cx="300" cy="40" r="4.5" fill="#0170B9" stroke="#fff" strokeWidth="1.5" />
+                  <circle cx="400" cy="10" r="4.5" fill="#0170B9" stroke="#fff" strokeWidth="1.5" />
                 </svg>
                 
                 {/* Floating overlay chip */}

@@ -80,7 +80,7 @@ export default function About() {
               <div className="grid grid-cols-3 bg-slate-50 border-b border-slate-200 p-4 font-display font-semibold text-center text-xs md:text-sm">
                 <div className="text-left text-slate-500">Metric / Focus</div>
                 <div className="text-rose-600">Typical Agency</div>
-                <div className="text-brand-purple font-bold">AdmitGrowth System™</div>
+                <div className="text-brand-purple font-bold">Generation Marketing System™</div>
               </div>
 
               {/* Rows */}

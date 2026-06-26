@@ -5,8 +5,8 @@
   <path d="M 12 56 C 12 78, 28 92, 50 92 C 72 92, 88 78, 88 56 C 88 47, 85 41, 80 41 L 43 41 L 52 53 L 74 53 C 74 69, 64 78, 50 78 C 36 78, 26 69, 26 56 Z" fill="url(#logo-grad)" />
   <defs>
     <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#8B5CF6" />
-      <stop offset="100%" stop-color="#5B21B6" />
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#0170B9" />
     </linearGradient>
   </defs>
 </svg>

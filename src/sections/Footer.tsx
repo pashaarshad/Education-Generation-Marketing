@@ -111,7 +111,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-brand-purple shrink-0" />
-                <a href="tel:+91911121829" className="hover:text-white transition-colors">+91 91112 1829</a>
+                <a href="tel:+919111219829" className="hover:text-white transition-colors">+91 91112 19829</a>
               </div>
               <div className="flex items-center gap-3">
                 <MapPin className="w-4 h-4 text-brand-purple shrink-0" />
